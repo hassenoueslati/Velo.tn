@@ -24,3 +24,12 @@ Route::get('/index', function () {
 Route::get('/booking', function () {
     return view('booking');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/service', function () {
+    return view('service');
+});
