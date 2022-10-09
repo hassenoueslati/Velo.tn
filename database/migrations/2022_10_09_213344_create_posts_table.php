@@ -13,13 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::enableForeignKeyConstraints();
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('titrePost');
+            $table->string('contenuPost');
+            $table->string('Tags');
+            $table->date('datePost');
+            $table->foreignId('user_id')->constrained('users')
+            ->cascadeOnDelete();
             $table->timestamps();
+
+
+
         });
     }
 
@@ -30,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('posts');
     }
 };
