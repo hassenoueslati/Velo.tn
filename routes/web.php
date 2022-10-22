@@ -33,3 +33,16 @@ Route::get('/contact', function () {
 Route::get('/service', function () {
     return view('service');
 });
+Route::get('/testimonial', function () {
+    return view('testimonial');
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
