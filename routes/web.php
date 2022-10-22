@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VeloController;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\LocationController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,35 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
-
-Route::get('/index', function () {
-    return view('index');
-});
-Route::get('/booking', function () {
-    return view('booking');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/service', function () {
-    return view('service');
-});
-Route::get('/testimonial', function () {
-    return view('testimonial');
-});
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::resource('/velo', VeloController::class);
+Route::resource('/location', LocationController::class);
