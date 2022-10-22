@@ -14,11 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id('idReservation');
+            $table->id();
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->foreignId('user_id')
                 ->constrained('users')
+                ->cascadeOnDelete();
+            $table->foreignId('evenement_id')
+                ->constrained('evenements')
                 ->cascadeOnDelete();
             $table->string('description');
             $table->timestamps();

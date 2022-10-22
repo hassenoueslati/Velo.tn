@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    public function reservations()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
