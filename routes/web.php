@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VeloController;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\LocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +40,9 @@ Route::get('/testimonial', function () {
     return view('testimonial');
 });
 
+Route::resource('/velo', VeloController::class);
+Route::resource('/location', LocationController::class);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -46,3 +52,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+;
