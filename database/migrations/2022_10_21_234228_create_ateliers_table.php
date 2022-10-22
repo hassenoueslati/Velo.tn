@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
+
         Schema::create('ateliers', function (Blueprint $table) {
-            $table->id();
+            $table->id('idAtelier');
             $table->string('specialite');
             $table->integer('capacite');
             $table->string('addresseAtelier');
-            // $table->foreignId('partenaires_id')
-            //     ->constrained('partenaires')
+            // $table->foreignId('user_id')
+            //     ->constrained('users')
             //     ->cascadeOnDelete();
+            $table->foreignId('partenaires_id')->unsigned()->constrained('partenaires')->cascadeOnDelete();
             $table->timestamps();
         });
     }
