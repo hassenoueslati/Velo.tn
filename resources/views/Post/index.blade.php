@@ -32,15 +32,24 @@
 @endsection
 @section('content')
     <div class="container mt-5">
-        <a type="submit" class="btn btn-primary mt-3 mb-3" href="{{route('createPost')}}">Nouveau Post</a>
+        <div class="d-flex justify-content-between align-items-center">
+            <a type="submit" class="btn btn-primary mt-3 mb-3" href="{{route('createPost')}}">Nouveau Post</a>
+                <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
+                    <div class="d-flex">
+                        <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search For Post" aria-label="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </div>
+                </form>
+
+        </div>
         <div class="list-group">
             @foreach($listPost as $post )
-                <div class="list-group-item">
+                <div class="list-group-item" data-wow-delay="0.3s">
                     <h4><a href="{{route('showPost',$post->id)}}">{{$post -> titrePost }}</a></h4>
                     <p>{{$post -> contenuPost}}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <small>Posté le {{$post -> created_at -> format('d/m/Y à H:m')}}</small>
-                        <span class="badge badge-primary" style=" background-color: blue">{{$post -> user -> email}}</span>
+                        <span class="badge badge-primary" style=" background-color: blue">{{$post -> user -> name}}</span>
                     </div>
                 </div>
             @endforeach

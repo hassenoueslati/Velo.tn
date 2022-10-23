@@ -15,7 +15,7 @@ class CommentaireController extends Controller
     public function deleteCommentaire($id){
         $commentaire = commentaire::find($id);
         $commentaire->delete();
-        return redirect("");
+        return redirect("/AllPost");
     }
 
     public function editCommentaire($id){
@@ -24,14 +24,12 @@ class CommentaireController extends Controller
     }
 
     public function updateCommentaire(Request $request,$id){
+
         $commentaire = commentaire::find($id);
+        $post = Post::find($commentaire -> post_id );
         $commentaire->contenuCommentaire = $request->get('contenuCommentaire');
-        $commentaire->contenuCommentaire = $request->get('contenuCommentaire');
-        $commentaire->dateCommentaire = $request->get('dateCommentaire');
-        $commentaire->user_id = $request->get('user_id');
-        $commentaire->post_id = $request->get('post_id');
         $commentaire->update();
-        return redirect('');
+        return redirect()->route('showPost',$post -> id);
     }
 
     public function createCommentaire(){
@@ -44,7 +42,7 @@ class CommentaireController extends Controller
         ]);
         $commentaire = new commentaire();
         $commentaire->contenuCommentaire = request('contenuCommentaire');
-        $commentaire->user_id = 1;
+        $commentaire->user_id = auth()->user()->id;
 
         $post->commentaire()->save($commentaire);
         return redirect()->route('showPost',$post -> id);

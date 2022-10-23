@@ -45,11 +45,15 @@
                     <h6 style="color: #0dcaf0">{{$post -> Tags}}</h6>
                     <div class="d-flex justify-content-between align-items-center">
                         <small>Posté le {{$post -> created_at -> format('d/m/Y à H:m')}}</small>
-                        <span class="badge badge-primary" style=" background-color: blue">{{$post -> user -> email}}</span>
+                        <span class="badge badge-primary" style=" background-color: blue">{{$post -> user -> name}}</span>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-5">
-                        <a href="{{route('showFormPost',$post->id)}}" class="btn btn-warning">Update</a>
-                        <a href="{{route('deletePost',$post->id)}}" class="btn btn-danger">Delete</a>
+                        @can('update',$post)
+                        <a href="{{route('showFormPost',$post->id)}}" class="btn btn-warning"><img src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png"/> Update</a>
+                        @endcan
+                        @can('delete',$post)
+                        <a href="{{route('deletePost',$post->id)}}" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png" > Delete</a>
+                        @endcan
                     </div>
                 </div>
             </div>
@@ -60,10 +64,49 @@
         @forelse($post -> commentaire as $commentaire)
             <div class="card mb-3" style="margin-left: 10px ; margin-right: 50px">
                 <div class="card-body">
-                    {{$commentaire -> contenuCommentaire}}
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span>{{$commentaire -> contenuCommentaire}}</span>
+                        <div>
+                            @can('update',$commentaire)
+                            <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning"><img src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png"/></button>
+                            @endcan
+                            @can('delete',$commentaire )
+                            <a href="{{route('deleteCommentaire',$commentaire->id)}}" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png" width="20px"/></a>
+                            @endcan
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Comment</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{route("updateCommentaire", $commentaire -> id)}}" method="GET" class="mt-3">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label for="contenuCommentaire">Votre commentaire</label>
+                                                <textarea class="form-control @error('contenuCommentaire') is-invalid @enderror"
+                                                          name="contenuCommentaire" id="contenuCommentaire" rows="5" > {{ $commentaire->contenuCommentaire }}</textarea>
+                                                @error('contenuCommentaire')
+                                                <div class="invalid-feedback">{{$errors-> first('contenuCommentaire')}}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary" style="margin-left: 10px">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <small>Posté le {{$commentaire -> created_at -> format('d/m/Y à H:m')}}</small>
-                        <span class="badge badge-primary" style=" background-color: blue">{{$commentaire -> user -> email}}</span>
+                        <span class="badge badge-primary" style=" background-color: blue">{{$commentaire -> user -> name}}</span>
                     </div>
                 </div>
             </div>
@@ -73,9 +116,9 @@
 
         <form action="{{route("createCommentaire", $post -> id)}}" method="POST" class="mt-3">
             @csrf
-            <div class="form-group" style="margin-left: 10px ; margin-right: 50px; margin-bottom: 10px">
+            <div class="form-group" style="margin-left: 10px ; margin-right: 50px; margin-bottom: 10px ; ">
                 <label for="contenuCommentaire">Votre commentaire</label>
-                <textarea class="form-control @error('contenuCommentaire') is-valid @enderror"
+                <textarea class="form-control @error('contenuCommentaire') is-invalid @enderror"
                           name="contenuCommentaire" id="contenuCommentaire" rows="5"></textarea>
                 @error('contenuCommentaire')
                 <div class="invalid-feedback">{{$errors-> first('contenuCommentaire')}}</div>
