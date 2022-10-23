@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Produit extends Model
 {
     use HasFactory;
-    public function promotion()
-    {
-        return $this->belongsTo(Promotion::class);
-    }
+protected $fillable=['nomProduit','descriptionProduit','prixProduit','category_id','image','etatProduit'];
+    protected $table='produits';
+
+
+
 }
