@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Location;
 use Illuminate\Http\Request;
+use App\Models\Velo;
+
+
 
 class LocationController extends Controller
 {
     public function index()
     {
         $locations = location::all();
-        return view ('locations.index')->with('locations', $locations);
+        $velos = velo::all();
+ 
+        return view ('locations.index')->with('locations', $locations, 'velos', $velos);
     }
  
     
@@ -30,8 +35,9 @@ class LocationController extends Controller
     
     public function show($id)
     {
+        $velo = velo :: all();
         $location = Location::find($id);
-        return view('locations.show')->with('locations', $location);
+        return view('locations.show')->with('locations', $location, 'velos', $velo);
     }
  
     
@@ -49,6 +55,7 @@ class LocationController extends Controller
         $location->update($input);
         return redirect('location')->with('flash_message', 'location Updated!');  
     }
+    
  
   
     public function destroy($id)
@@ -56,5 +63,6 @@ class LocationController extends Controller
         Location::destroy($id);
         return redirect('location')->with('flash_message', 'location deleted!');  
     }
+
 }
 

@@ -1,7 +1,7 @@
 @extends('locations.layout')
 @section('content')
 <div class="card">
-  <div class="card-header">Locations Page</div>
+  <div class="card-header">Locations Velo</div>
   <div class="card-body">
       
       <form action="{{ url('location') }}" method="post">
@@ -14,6 +14,7 @@
         <input type="date" name="dateDebut" id="dateDebut" class="form-control"></br>
         <label>Date Fin</label></br>
         <input type="date" name="dateFin" id="DateFin" class="form-control"></br>
+        
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
   

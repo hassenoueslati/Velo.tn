@@ -20,6 +20,8 @@
                                         <th>cin</th>
                                         <th>dateDebut</th>
                                         <th>dateFin</th>
+                                        <th>Type Velo</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -30,6 +32,7 @@
                                         <td>{{ $item->cin }}</td>
                                         <td>{{ $item->dateDebut }}</td>
                                         <td>{{ $item->dateFin }}</td>
+                                        <td>{{ $item->$locations->$velos->type }}</td>
                                         <td>
                                             <a href="{{ url('/location/' . $item->id) }}" title="View location"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/location/' . $item->id . '/edit') }}" title="Edit location"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
