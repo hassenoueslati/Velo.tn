@@ -61,4 +61,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function reservations()
+    {
+        return $this->hasMany(reservation::class);
+    }
 }

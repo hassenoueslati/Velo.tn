@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class reservation extends Model
 {
     use HasFactory;
+    protected $guarded = [] ;
     public function evenement()
     {
         return $this->belongsTo(evenement::class);

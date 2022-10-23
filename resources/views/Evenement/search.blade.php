@@ -358,28 +358,21 @@
 </div>
 <!-- Page Header End -->
 
-<form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
-    <div class="d-flex">
-        <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search For Post" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </div>
-</form>
-
 <div class="owl-carousel testimonial-carousel position-relative">
     @foreach($listevenement as $evenement)
-    <div class="testimonial-item text-center">
-        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="assets/img/image1.jpg" style="width: 80px; height: 80px;">
-        <h3 class="mb-0">{{$evenement->nomEvenement}}</h3>
-        <p><td>At {{$evenement->dateEvenement}}</td></p>
-        <div class="testimonial-text bg-light text-center p-4" style="display: flex; justify-content: space-around">
-            <div>
-                <h5 class="mb-0">Nombre De Place </h5><p class="mb-0">{{$evenement->nbPlaces}}</p>
-            </div>
+        <div class="testimonial-item text-center">
+            <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="assets/img/image1.jpg" style="width: 80px; height: 80px;">
+            <h3 class="mb-0">{{$evenement->nomEvenement}}</h3>
+            <p><td>At {{$evenement->dateEvenement}}</td></p>
+            <div class="testimonial-text bg-light text-center p-4" style="display: flex; justify-content: space-around">
                 <div>
-                 <h5 class="mb-0">Catégorie </h5> <p class="mb-0">{{$evenement->categorieEvenement}}</p>
+                    <h5 class="mb-0">Nombre De Place </h5><p class="mb-0">{{$evenement->nbPlaces}}</p>
                 </div>
+                <div>
+                    <h5 class="mb-0">Catégorie </h5> <p class="mb-0">{{$evenement->categorieEvenement}}</p>
+                </div>
+            </div>
         </div>
-    </div>
     @endforeach
 </div>
 {{--

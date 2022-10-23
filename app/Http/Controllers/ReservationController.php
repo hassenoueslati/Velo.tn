@@ -29,8 +29,6 @@ class ReservationController extends Controller
         $reservation=Reservation::find($id);
         $reservation->dateDebut = $request->get('dateDebut');
         $reservation->dateFin = $request->get('dateFin');
-        $reservation->user_id = $request->get('user_id');
-        $reservation->evenement_id = $request->get('evenement_id');
         $reservation->description = $request->get('description');
         $reservation->update();
         return redirect('/reservation');
@@ -42,13 +40,22 @@ class ReservationController extends Controller
     }
     public function saveReservation(Request $request){
 
-        $reservation = new Reservation();
+        $data = $request->validate([
+            'dateDebut' => 'required',
+            'dateFin' => 'required',
+            'evenement_id' => 'required',
+            'description' => 'required | min:10'
+        ]);
+
+        auth()->user()->reservations()->create($data);
+
+        /*$reservation = new Reservation();
         $reservation->dateDebut = $request->get('dateDebut');
         $reservation->dateFin = $request->get('dateFin');
-        $reservation->user_id = $request->get('user_id');
+        $reservation->user_id = auth()->user()->id;
         $reservation->evenement_id = $request->get('evenement_id');
         $reservation->description = $request->get('description');
-        $reservation->save();
+        $reservation->save();*/
         return redirect('/reservation');
 
     }

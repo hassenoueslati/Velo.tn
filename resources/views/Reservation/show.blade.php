@@ -106,45 +106,60 @@
 <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-1.jpg);">
     <div class="container-fluid page-header-inner py-5">
         <div class="container text-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown"> Réservation</h1>
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center text-uppercase">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                </ol>
+
             </nav>
         </div>
     </div>
 </div>
 <!-- Page Header End -->
 
-
-<Table>
-    <tr>
-        <th>Date Debut </th>
-        <th>Date Fin</th>
-        <th>User </th>
-        <th>Nom Evenement </th>
-        <th>Description </th>
-        <th>action </th>
-    </tr>
+<div class="owl-carousel testimonial-carousel position-relative">
     @foreach($listreservation as $reservation)
-        <tr>
-
-            <td>{{$reservation->dateDebut}}</td>
-            <td> {{$reservation->dateFin}}</td>
-            <td>{{$reservation-> user -> email}}</td>
-            <td>{{$reservation-> evenement -> nomEvenement}}</td>
-           {{-- <td>{{$reservation->evenement_id}}</td>--}}
-            <td>{{$reservation->description}}</td>
-            <td> <a href="{{route('deleteReservation',$reservation->id)}}">Delete</a>
-                <a href="{{route('editReservation',$reservation->id)}}">Update</a>  </td>
-
-        </tr>
+        <div class="testimonial-item text-center">
+            <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="assets/img/image1.jpg" style="width: 80px; height: 80px;">
+            <h5 class="mb-0">Nom </h5> <p class="mb-0">Evenement :{{$reservation-> evenement -> nomEvenement}}</p>
+            <h5 class="mb-0">Email </h5><p class="mb-0">Reserve par:{{$reservation-> user -> email}}</p>
+            <h3 class="mb-0">From{{$reservation->dateDebut}}</h3>
+            <p><td>To {{$reservation->dateFin}}</td></p>
+            <div class="testimonial-text bg-light text-center p-4">
+                    <h5 class="mb-0">Description </h5> <p class="mb-0">{{$reservation->description}}</p>
+            </div>
+            <div>
+                <a href="{{route('deleteReservation',$reservation->id)}}">Delete</a>
+                <a href="{{route('editReservation',$reservation->id)}}">Update</a>
+                <a href="{{route('createReservation')}}">Add</a> </div>
+        </div>
     @endforeach
-    <td><a href="{{route('createReservation')}}">Add</a>  </td></td>
-</Table>
+</div>
+
+{{--<Table>--}}
+{{--    <tr>--}}
+{{--        <th>Date Debut </th>--}}
+{{--        <th>Date Fin</th>--}}
+{{--        <th>User </th>--}}
+{{--        <th>Nom Evenement </th>--}}
+{{--        <th>Description </th>--}}
+{{--        <th>action </th>--}}
+{{--    </tr>--}}
+{{--    @foreach($listreservation as $reservation)--}}
+{{--        <tr>--}}
+
+{{--            <td>{{$reservation->dateDebut}}</td>--}}
+{{--            <td> {{$reservation->dateFin}}</td>--}}
+{{--            <td>{{$reservation-> user -> email}}</td>--}}
+{{--            <td>{{$reservation-> evenement -> nomEvenement}}</td>--}}
+{{--           --}}{{-- <td>{{$reservation->evenement_id}}</td>--}}
+{{--            <td>{{$reservation->description}}</td>--}}
+{{--            <td> <a href="{{route('deleteReservation',$reservation->id)}}">Delete</a>--}}
+{{--                <a href="{{route('editReservation',$reservation->id)}}">Update</a>  </td>--}}
+
+{{--        </tr>--}}
+{{--    @endforeach--}}
+{{--    <td><a href="{{route('createReservation')}}">Add</a>  </td></td>--}}
+{{--</Table>--}}
+
 
 
 <!-- Footer Start -->

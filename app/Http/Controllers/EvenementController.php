@@ -38,13 +38,25 @@ class EvenementController extends Controller
     }
     public function saveEvenement(Request $request){
 
+        request()->validate([
+            'nomEvenement' => 'required | min:5 ',
+            'dateEvenement' => 'required',
+            'nbPlaces' => 'required',
+            'categorieEvenement' => 'required | min:5'
+        ]);
         $evenement = new Evenement();
-        $evenement->nomEvenement = $request->get('nomEvenement');
-        $evenement->dateEvenement = $request->get('dateEvenement');
-        $evenement->nbPlaces = $request->get('nbPlaces');
-        $evenement->categorieEvenement = $request->get('categorieEvenement');
+        $evenement->nomEvenement = request('nomEvenement');
+        $evenement->dateEvenement = request('dateEvenement');
+        $evenement->nbPlaces = request('nbPlaces');
+        $evenement->categorieEvenement = request('categorieEvenement');
         $evenement->save();
         return redirect('/evenement');
 
+    }
+    public function searchEvenement()
+    {
+        $search_text =$_GET['query'];
+        $listevenement =evenement::where('nomEvenement','LIKE','%'.$search_text.'%')->get()->sortByDesc('id');
+        return view('Evenement.search',compact('listevenement'));
     }
 }
