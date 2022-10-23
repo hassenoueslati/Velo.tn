@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('velos', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->integer('nombre');
-            $table->string('couleur');
+            $table->integer('nombres');
+            $table->string('couleurs');
             $table->float('prix');
             $table->timestamps();
         });

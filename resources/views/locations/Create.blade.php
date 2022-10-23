@@ -1,4 +1,7 @@
-@extends('locations.layout')
+@extends("baseBackOffice")
+@section('Location')
+    active
+@endsection
 @section('content')
 <div class="card">
   <div class="card-header">Locations Velo</div>

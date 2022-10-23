@@ -9,12 +9,5 @@ class Velo extends Model
     protected $table = 'velos';
     protected $primaryKey = 'id';
     protected $fillable = ['type', 'nombres', 'couleurs', 'prix'];
-    public $timestamps = false;
-
-    public function Location()
-    {
-        return $this->hasMany(Location::class, 'velo_id', 'id');
-    }
-
-    
+    public $timestamps = false;    
 }

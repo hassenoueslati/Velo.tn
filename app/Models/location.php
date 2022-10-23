@@ -13,8 +13,5 @@ class Location extends Model
     protected $fillable = ['lieu', 'cin', 'dateDebut', 'dateFin'];
     public $timestamps = false;
 
-    public function velo()
-    {
-        return $this->belongsTo(Velo::class);
-    }
+    
 }

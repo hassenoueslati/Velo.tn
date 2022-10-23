@@ -1,4 +1,7 @@
-@extends('velos.layout')
+@extends("baseBackOffice")
+@section('Velo')
+    active
+@endsection
 @section('content')
 <div class="card">
   <div class="card-header">Velos Page</div>

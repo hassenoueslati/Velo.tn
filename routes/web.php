@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\VeloController;
+use App\Http\Controllers\VeloFFController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +75,10 @@ Route::get('/UpdateCommentaire/{id}',[\App\Http\Controllers\CommentaireControlle
 
 
 Route::get('/forum',[\App\Http\Controllers\PostController::class, 'showAllPostBack']);
+
+/*start getionvelo*/ 
+Route::resource('/velo', VeloController::class);
+Route::resource('/location', LocationController::class);
+Route::resource('/veloFF', VeloFFController::class);
+/*end getionvelo*/ 
+
