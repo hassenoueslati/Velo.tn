@@ -24,10 +24,6 @@ Route::get('/index', function () {
 Route::get('/booking', function () {
     return view('booking');
 });
-
-Route::get('/product', function () {
-    return view('product');
-});
 Route::get('/about', function () {
     return view('about');
 });
@@ -37,29 +33,40 @@ Route::get('/contact', function () {
 Route::get('/service', function () {
     return view('service');
 });
+Route::get('/testimonial', function () {
+    return view('testimonial');
+});
+Route::get('/forum', function () {
+    return view('ForumBack.index');
+});
 
-Route::get('/AllProduit',[\App\Http\Controllers\ProduitController::class, 'showAllProduit']);
-Route::get('/DeleteProduit/{id}',[\App\Http\Controllers\ProduitController::class, 'deleteProduit'])->name('deleteProduit');
+Route::get('/home', function () {
+    return view('BackOffice.dashboard');
+});
 
-Route::get('/editProduit/{id}',[\App\Http\Controllers\ProduitController::class, 'editProduit'])->name('editProduit');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
-Route::get('/updateProduit/{id}',[\App\Http\Controllers\ProduitController::class, 'updateProduit'])->name('updateProduit');
+Route::get('/AllPost',[\App\Http\Controllers\PostController::class, 'showAllPost']);
+Route::get('/ShowPost/{id}',[\App\Http\Controllers\PostController::class, 'showPost'])->name('showPost');
+Route::get('/CreatePost',[\App\Http\Controllers\PostController::class, 'createPost']);
+Route::get('/DeletePost/{id}',[\App\Http\Controllers\PostController::class, 'deletePost'])->name('deletePost');
+Route::get('/ShowFormPost/{id}',[\App\Http\Controllers\PostController::class, 'editPost'])->name('showFormPost');
+Route::get('/UpdatePost/{id}',[\App\Http\Controllers\PostController::class, 'updatePost'])->name('updatePost');
+Route::get('/ShowFormCreatePost',[\App\Http\Controllers\PostController::class, 'createPost'])->name('createPost');
+Route::get('/CreatePost',[\App\Http\Controllers\PostController::class, 'savePost'])->name('savePost');
+Route::get('/search',[\App\Http\Controllers\PostController::class, 'searchPost']);
+
+Route::post('/CreateCommentaire/{post}',[\App\Http\Controllers\CommentaireController::class, 'saveCommentaire'])->name('createCommentaire');
+Route::get('/DeleteCommentaire/{id}',[\App\Http\Controllers\CommentaireController::class, 'deleteCommentaire'])->name('deleteCommentaire');
+Route::get('/UpdateCommentaire/{id}',[\App\Http\Controllers\CommentaireController::class, 'updateCommentaire'])->name('updateCommentaire');
 
 
-Route::get('/createformProduit',[\App\Http\Controllers\ProduitController::class, 'createformProduit'])->name('createformProduit');
-Route::get('/search',[\App\Http\Controllers\ProduitController::class, 'searchProduit'])->name('searchProduit');
-
-
-Route::get('/saveProduit',[\App\Http\Controllers\ProduitController::class, 'saveProduit'])->name('saveProduit');
-
-/*Promotion*/
-Route::get('/AllPromotion',[\App\Http\Controllers\PromotionController::class, 'showAllPromotion']);
-Route::get('/createformpromotion',[\App\Http\Controllers\PromotionController::class, 'createformpromotion'])->name('createformpromotion');
-Route::get('/savePromotion',[\App\Http\Controllers\PromotionController::class, 'savePromotion'])->name('savePromotion');
-
-/*Category routes*/
-Route::get('/createformcategory',[\App\Http\Controllers\CategoryController::class, 'createformCategory'])->name('createformCategory');
-Route::get('/saveCategory',[\App\Http\Controllers\CategoryController::class, 'saveCategory'])->name('saveCategory');
-
-
-
+Route::get('/forum',[\App\Http\Controllers\PostController::class, 'showAllPostBack']);

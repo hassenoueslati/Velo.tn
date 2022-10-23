@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('titrePost');
             $table->string('contenuPost');
             $table->string('Tags');
-            $table->date('datePost');
             $table->foreignId('user_id')->constrained('users')
             ->cascadeOnDelete();
             $table->timestamps();
