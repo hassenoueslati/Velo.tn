@@ -14,10 +14,10 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
+                        <th>Title</th>
+                        <th>Category</th>
                         <th>Start Date</th>
                         <th>End Date</th>
-                        <th> Place Number</th>
-                        <th>Category</th>
                         <th>Description</th>
                     </tr>
                     </thead>

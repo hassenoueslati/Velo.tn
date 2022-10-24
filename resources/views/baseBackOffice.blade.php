@@ -150,7 +150,7 @@
 
                 <li class="menu-item @yield('Product') ">
                     <a href="/product" class="menu-link">
-                        <i class="menu-icon bx bx-comment"></i>
+                        <i class="menu-icon bx bx-package"></i>
                         <div data-i18n="Analytics">Product</div>
                     </a>
                 </li>
@@ -168,27 +168,27 @@
                 </li>
                 <li class="menu-item @yield('Reservation') ">
                     <a href="/ReservationBack" class="menu-link">
-                        <i class="menu-icon bx bx-comment"></i>
+                        <i class="menu-icon bx bx-edit"></i>
                         <div data-i18n="Analytics">Reservation</div>
                     </a>
                 </li>
                 <li class="menu-item @yield('Evenement') ">
                     <a href="/EvenementBack" class="menu-link">
-                        <i class="menu-icon bx bx-comment"></i>
+                        <i class="menu-icon bx bx-laugh"></i>
                         <div data-i18n="Analytics">Evenement</div>
                     </a>
                 </li>
                 <!-- Ateliers -->
                 <li class="menu-item @yield('Ateliers') ">
                     <a href="/atelier" class="menu-link">
-                        <i class="menu-icon bx bx-comment"></i>
+                        <i class="menu-icon bx bx-package"></i>
                         <div data-i18n="Analytics">Ateliers</div>
                     </a>
                 </li>
                 <!-- Partenaires -->
                 <li class="menu-item @yield('Partenaires') ">
                     <a href="/partenaire" class="menu-link">
-                        <i class="menu-icon bx bx-comment"></i>
+                        <i class="menu-icon bx bxs-business"></i>
                         <div data-i18n="Analytics">Partenaires</div>
                     </a>
                 </li>
@@ -196,14 +196,14 @@
                 <!-- Velo -->
                 <li class="menu-item @yield('Velo') ">
                     <a href="/velo" class="menu-link">
-                        <i class="menu-icon bx bx-comment"></i>
+                        <i class="menu-icon bx bx-happy"></i>
                         <div data-i18n="Analytics">Velo</div>
                     </a>
                 </li>
                 <!-- Location -->
                 <li class="menu-item @yield('Location') ">
                     <a href="/location" class="menu-link">
-                        <i class="menu-icon bx bx-comment"></i>
+                        <i class="menu-icon bx bx-edit"></i>
                         <div data-i18n="Analytics">Location Velo</div>
                     </a>
                 </li>
@@ -244,18 +244,6 @@
                     <!-- /Search -->
 
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
-                        <!-- Place this tag where you want the button to render. -->
-                        <li class="nav-item lh-1 me-3">
-                            <a
-                                class="github-button"
-                                href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                data-icon="octicon-star"
-                                data-size="large"
-                                data-show-count="true"
-                                aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                            >Star</a
-                            >
-                        </li>
 
                         <!-- User -->
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -274,7 +262,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
-                                                <span class="fw-semibold d-block">John Doe</span>
+                                                <span class="fw-semibold d-block">Hamdi Oueslati</span>
                                                 <small class="text-muted">Admin</small>
                                             </div>
                                         </div>
@@ -284,31 +272,13 @@
                                     <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="/dashboard">
                                         <i class="bx bx-user me-2"></i>
                                         <span class="align-middle">My Profile</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="bx bx-cog me-2"></i>
-                                        <span class="align-middle">Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="auth-login-basic.html">
+                                    <a class="dropdown-item" href="">
                                         <i class="bx bx-power-off me-2"></i>
                                         <span class="align-middle">Log Out</span>
                                     </a>

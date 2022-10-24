@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img width="20%" style="margin-left: 350px" src="https://png.pngtree.com/png-vector/20191028/ourlarge/pngtree-logo-mountain-bike-cycling-mtb-isolated-vector-silhouette-downhill-cyclist-png-image_1908266.jpg" >
+
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
