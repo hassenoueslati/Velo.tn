@@ -9,8 +9,13 @@
 
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card">
-            <h5 class="card-header">Striped rows</h5>
+            <div class="d-flex justify-content-between">
+                <h5 class="card-header">Products</h5>
+            </div>
             <div class="table-responsive text-nowrap">
+                <button type="button" class="btn btn-primary " style="margin-bottom: 10px ; margin-left: 10px" data-toggle="modal" data-target="#exampleModal">
+                    Add Product
+                </button>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -72,28 +77,18 @@
     <!-- END Content -->
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="modal-body">
-                    ...
                     <div class="row">
                         <div class="col-xl">
                             <div class="card mb-4">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <h5 class="mb-0">Add Product</h5>
-                                    <small class="text-muted float-end">Default label</small>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{route('saveProduit')}}" method="GET">
@@ -123,7 +118,6 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class="form-text">You can use letters, numbers & periods</div>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="basic-default-company">Quantity</label>
@@ -142,7 +136,7 @@
                                             <h5 class="card-header">File input</h5>
                                             <div class="card-body">
                                                 <div class="mb-2">
-                                                    <label for="formFile" class="form-label">Default file input example</label>
+                                                    <label for="formFile" class="form-label">Add Image</label>
                                                     <input class="form-control"  name="image"  type="file" id="formFile" />
                                                 </div>
 

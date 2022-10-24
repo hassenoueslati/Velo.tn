@@ -30,7 +30,7 @@
                           </div>
                           <div class="mb-3">
                             <label class="form-label" for="capacite">Capacite</label>
-                            <input type="text" name="capacite" id="capacite" class="form-control @error('capacite') is-invalid @enderror" />
+                            <input type="number" name="capacite" id="capacite" class="form-control @error('capacite') is-invalid @enderror" />
                             @error('capacite')
                             <div class="invalid-feedback">{{ $errors ->first('capacite')}}</div>
                             @enderror

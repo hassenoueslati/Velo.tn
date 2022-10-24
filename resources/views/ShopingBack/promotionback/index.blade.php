@@ -8,8 +8,11 @@
     <!-- Striped Rows -->
     <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
-        <h5 class="card-header">Striped rows</h5>
+        <h5 class="card-header">Promotions</h5>
         <div class="table-responsive text-nowrap">
+            <button type="button" class="btn btn-primary" style="margin-bottom: 10px ; margin-left: 10px" data-toggle="modal" data-target="#exampleModal">
+                Add Promotion
+            </button>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -72,9 +75,7 @@
 
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button>
+
     <!-- Modal -->
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,12 +113,10 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="basic-default-email">Category</label>
                                             <div class="mb-3">
                                                 <label class="form-label"  for="basic-default-fullname">Category</label>
                                                 <input type="text" name="categoriePromotion" id="categoriePromotion" class="form-control" id="basic-default-fullname" placeholder="Cateory " />
                                             </div>
-                                            <div class="form-text">You can use letters, numbers & periods</div>
                                         </div>
 
                                         <div class="mb-3">
@@ -133,7 +132,7 @@
                                             <h5 class="card-header">File input</h5>
                                             <div class="card-body">
                                                 <div class="mb-2">
-                                                    <label for="formFile" class="form-label">Default file input example</label>
+                                                    <label for="formFile" class="form-label">Add Image</label>
                                                     <input class="form-control"  name="image"  type="file" id="formFile" />
                                                 </div>
 

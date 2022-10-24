@@ -135,7 +135,7 @@ Route::get('/deletePromotion/{id}',[\App\Http\Controllers\PromotionController::c
 
 
 Route::get('/createformProduit',[\App\Http\Controllers\ProduitController::class, 'createformProduit'])->name('createformProduit');
-Route::get('/search',[\App\Http\Controllers\ProduitController::class, 'searchProduit'])->name('searchProduit');
+Route::get('/searchProduct',[\App\Http\Controllers\ProduitController::class, 'searchProduit'])->name('searchProduit');
 Route::get('/searchback',[\App\Http\Controllers\ProduitController::class, 'searchProduitBack'])->name('searchProduitBack');
 
 

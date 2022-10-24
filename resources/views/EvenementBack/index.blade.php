@@ -11,6 +11,9 @@
         <div class="card">
             <h2 class="card-header">Events List</h2>
             <div class="table-responsive text-nowrap">
+                <button type="button" style="margin-bottom: 10px ; margin-left: 10px" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Add New Event
+                </button>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -55,9 +58,7 @@
         </div>
     </div>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-       Add New Event
-    </button>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
