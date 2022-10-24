@@ -42,7 +42,7 @@
 
         <div class="form-group col-lg-6 mt-3">
             <label for="titrePost">Title</label>
-            <input type="text" name="titrePost" id="titrePost" class="form-control @error('titrePost') is-invalid @enderror"  >
+            <input type="text" name="titrePost" id="titrePost" class="form-control @error('titrePost') is-invalid @enderror">
             @error('titrePost')
             <div class="invalid-feedback">{{ $errors ->first('titrePost')}}</div>
             @enderror

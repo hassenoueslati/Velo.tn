@@ -30,7 +30,7 @@
         rel="stylesheet"
     />
 
-    <!-- ../. Uncomment required icon fonts -->
+    <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/backOffice/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
@@ -46,11 +46,11 @@
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="assets/backOffice/assets/vendor/js/helpers.js"></script>
+    <script src="../assets/backOffice/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="assets/backOffice/assets/js/config.js"></script>
+    <script src="../assets/backOffice/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -61,7 +61,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-                <a href="index.html" class="app-brand-link">
+                <a href="/home" class="app-brand-link">
               <span class="app-brand-logo demo">
                   <!---- log ---->
                 <svg
@@ -165,9 +165,32 @@
                         <div data-i18n="Analytics">category</div>
                     </a>
                 </li>
-
-
-
+                <li class="menu-item @yield('Reservation') ">
+                    <a href="/ReservationBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Reservation</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Evenement') ">
+                    <a href="/EvenementBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Evenement</div>
+                    </a>
+                </li>
+                <!-- Ateliers -->
+                <li class="menu-item @yield('Ateliers') ">
+                    <a href="/atelier" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Ateliers</div>
+                    </a>
+                </li>
+                <!-- Partenaires -->
+                <li class="menu-item @yield('Partenaires') ">
+                    <a href="/partenaire" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Partenaires</div>
+                    </a>
+                </li>
                 <!-- Menu2 -->
 
             </ul>
@@ -221,7 +244,7 @@
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    <img src="../assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -230,7 +253,7 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                    <img src="../assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
