@@ -30,17 +30,32 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
 @endsection
+@section('nav-active-Forum')
+    active
+@endsection
+@section('head-content')
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(https://images.unsplash.com/photo-1533561052604-c3beb6d55b8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80);">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Forum</h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+@endsection
 @section('content')
+
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center">
             <a type="submit" class="btn btn-primary mt-3 mb-3" href="{{route('createPost')}}">Nouveau Post</a>
-                <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
+                <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/searchPost')}}">
                     <div class="d-flex">
                         <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search For Post" aria-label="Search">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </div>
                 </form>
-
         </div>
         <div class="list-group">
             @foreach($listPost as $post )

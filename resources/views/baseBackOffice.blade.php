@@ -5,13 +5,10 @@
     class="light-style layout-menu-fixed"
     dir="ltr"
     data-theme="theme-default"
-    data-assets-path="../assets/backOffice/assets/"
+    data-assets-path="assets/backOffice/assets/"
     data-template="vertical-menu-template-free"
 >
 <head>
-
-@yield('head')
-
     <meta charset="utf-8" />
     <meta
         name="viewport"
@@ -64,7 +61,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-                <a href="index.html" class="app-brand-link">
+                <a href="/home" class="app-brand-link">
               <span class="app-brand-logo demo">
                   <!---- log ---->
                 <svg
@@ -149,7 +146,51 @@
                         <div data-i18n="Analytics">Forum</div>
                     </a>
                 </li>
-                <!-- Menu2 -->
+
+                <li class="menu-item @yield('Product') ">
+                    <a href="/product" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Product</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Promotion') ">
+                    <a href="/promotion" class="menu-link">
+                        <i class="menu-icon bx bx-laugh"></i>
+                        <div data-i18n="Analytics">Promotion</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Category') ">
+                    <a href="/category" class="menu-link">
+                        <i class="menu-icon bx bx-book"></i>
+                        <div data-i18n="Analytics">category</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Reservation') ">
+                    <a href="/ReservationBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Reservation</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Evenement') ">
+                    <a href="/EvenementBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Evenement</div>
+                    </a>
+                </li>
+                <!-- Ateliers -->
+                <li class="menu-item @yield('Ateliers') ">
+                    <a href="/atelier" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Ateliers</div>
+                    </a>
+                </li>
+                <!-- Partenaires -->
+                <li class="menu-item @yield('Partenaires') ">
+                    <a href="/partenaire" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Partenaires</div>
+                    </a>
+                </li>
 
                 <!-- Velo -->
                 <li class="menu-item @yield('Velo') ">
@@ -165,6 +206,8 @@
                         <div data-i18n="Analytics">Location Velo</div>
                     </a>
                 </li>
+                <!-- Menu2 -->
+
 
             </ul>
         </aside>
@@ -293,8 +336,8 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            , made with ❤️ by
-                            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                            , made with ❤️ by AeroDev
+
                         </div>
                         <div>
                             <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
@@ -333,22 +376,22 @@
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
-<script src="../assets/backOffice/assets/vendor/libs/jquery/jquery.js"></script>
-<script src="../assets/backOffice/assets/vendor/libs/popper/popper.js"></script>
-<script src="../assets/backOffice/assets/vendor/js/bootstrap.js"></script>
-<script src="../assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="assets/backOffice/assets/vendor/libs/jquery/jquery.js"></script>
+<script src="assets/backOffice/assets/vendor/libs/popper/popper.js"></script>
+<script src="assets/backOffice/assets/vendor/js/bootstrap.js"></script>
+<script src="assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-<script src="../assets/backOffice/assets/vendor/js/menu.js"></script>
+<script src="assets/backOffice/assets/vendor/js/menu.js"></script>
 <!-- endbuild -->
 
 <!-- Vendors JS -->
-<script src="../assets/backOffice/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+<script src="assets/backOffice/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
 <!-- Main JS -->
-<script src="../assets/backOffice/assets/js/main.js"></script>
+<script src="assets/backOffice/assets/js/main.js"></script>
 
 <!-- Page JS -->
-<script src="../assets/backOffice/assets/js/dashboards-analytics.js"></script>
+<script src="assets/backOffice/assets/js/dashboards-analytics.js"></script>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

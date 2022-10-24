@@ -15,7 +15,7 @@ return new class extends Migration
     {
 
         Schema::create('ateliers', function (Blueprint $table) {
-            $table->id('idAtelier');
+            $table->id();
             $table->string('specialite');
             $table->integer('capacite');
             $table->string('addresseAtelier');

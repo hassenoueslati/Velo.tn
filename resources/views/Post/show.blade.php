@@ -34,6 +34,18 @@
 @section('title')
     Post
 @endsection
+@section('head-content')
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(https://images.unsplash.com/photo-1533561052604-c3beb6d55b8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80);">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Forum</h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+@endsection
 @section('content')
     <!-- Page Post2 start -->
     <div style="margin-left: 10px ;">
@@ -68,40 +80,11 @@
                     <span>{{$commentaire -> contenuCommentaire}}</span>
                         <div>
                             @can('update',$commentaire)
-                            <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning"><img src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png"/></button>
+                            <a href="{{route('editCommentaire',$commentaire->id)}}" class="btn btn-warning"><img src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png"/></a>
                             @endcan
                             @can('delete',$commentaire )
                             <a href="{{route('deleteCommentaire',$commentaire->id)}}" class="btn btn-danger"><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png" width="20px"/></a>
                             @endcan
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Comment</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="{{route("updateCommentaire", $commentaire -> id)}}" method="GET" class="mt-3">
-                                            @csrf
-                                            <div class="form-group">
-                                                <label for="contenuCommentaire">Votre commentaire</label>
-                                                <textarea class="form-control @error('contenuCommentaire') is-invalid @enderror"
-                                                          name="contenuCommentaire" id="contenuCommentaire" rows="5" > {{ $commentaire->contenuCommentaire }}</textarea>
-                                                @error('contenuCommentaire')
-                                                <div class="invalid-feedback">{{$errors-> first('contenuCommentaire')}}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary" style="margin-left: 10px">Save</button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class evenement extends Model
 {
     use HasFactory;
+    protected $guarded = [] ;
     public function reservation()
     {
         return $this->hasMany(reservation::class);

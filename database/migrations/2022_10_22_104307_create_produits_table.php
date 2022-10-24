@@ -18,10 +18,15 @@ return new class extends Migration
             $table->string('nomProduit');
             $table->string('descriptionProduit');
             $table->float('prixProduit');
-            $table->foreignId('id_promotion')->unsigned()->nullable()->constrained('promotions')->cascadeOnDelete();
+            $table->integer('quantity');
+            /*            $table->foreignId('id_promotion')->unsigned()->nullable()->constrained('promotions')->cascadeOnDelete();*/
             // $table->int('quantiteProduit');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->string('image');
             $table->string('etatProduit');
             $table->timestamps();
+
         });
     }
 
