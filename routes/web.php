@@ -70,3 +70,24 @@ Route::get('/UpdateCommentaire/{id}',[\App\Http\Controllers\CommentaireControlle
 
 
 Route::get('/forum',[\App\Http\Controllers\PostController::class, 'showAllPostBack']);
+
+
+//AteliersBack
+Route::get('/atelier',[\App\Http\Controllers\AtelierController::class, 'showAllAtelierBack']);
+Route::get('/ShowAtelier/{id}',[\App\Http\Controllers\AtelierController::class, 'showAtelier'])->name('showAtelier');
+Route::get('/CreateAtelier',[\App\Http\Controllers\AtelierController::class, 'createAtelier']);
+Route::get('/ShowFormCreateAtelier',[\App\Http\Controllers\AtelierController::class, 'createAtelier'])->name('createAtelier');
+Route::get('/CreateAtelier',[\App\Http\Controllers\AtelierController::class, 'saveAtelier'])->name('saveAtelier');
+Route::get('/ShowFormAtelier/{id}',[\App\Http\Controllers\AtelierController::class, 'editAtelier'])->name('showFormAtelier');
+Route::get('/UpdateAtelier/{id}',[\App\Http\Controllers\AtelierController::class, 'updateAtelier'])->name('updateAtelier');
+Route::get('/DeleteAtelier/{id}',[\App\Http\Controllers\AtelierController::class, 'deleteAtelier'])->name('deleteAtelier');
+
+//PartenaireBack
+Route::get('/partenaire',[\App\Http\Controllers\PartenaireController::class, 'showAllPartenaireBack']);
+Route::get('/ShowPartenaire/{id}',[\App\Http\Controllers\PartenaireController::class, 'showPartenaire'])->name('showPartenaire');
+Route::get('/CreatePartenaire',[\App\Http\Controllers\PartenaireController::class, 'createPartenaire']);
+Route::get('/ShowFormCreatePartenaire',[\App\Http\Controllers\PartenaireController::class, 'createPartenaire'])->name('createPartenaire');
+Route::get('/CreatePartenaire',[\App\Http\Controllers\PartenaireController::class, 'savePartenaire'])->name('savePartenaire');
+Route::get('/ShowFormPartenaire/{id}',[\App\Http\Controllers\PartenaireController::class, 'editPartenaire'])->name('showFormPartenaire');
+Route::get('/UpdatePartenaire/{id}',[\App\Http\Controllers\PartenaireController::class, 'updatePartenaire'])->name('updatePartenaire');
+Route::get('/DeletePartenaire/{id}',[\App\Http\Controllers\PartenaireController::class, 'deletePartenaire'])->name('deletePartenaire');
