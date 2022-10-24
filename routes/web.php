@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VeloController;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\VeloFFController;
 
 /*
 |--------------------------------------------------------------------------
