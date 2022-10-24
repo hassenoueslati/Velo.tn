@@ -9,8 +9,11 @@
 
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card">
-            <h5 class="card-header">Striped rows</h5>
+            <h5 class="card-header">Category</h5>
             <div class="table-responsive text-nowrap">
+                <button type="button" class="btn btn-primary" style="margin-bottom: 10px ; margin-left: 10px" data-toggle="modal" data-target="#exampleModal">
+                    Add Category
+                </button>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -56,9 +59,7 @@
     <!-- END Content -->
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

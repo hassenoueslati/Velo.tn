@@ -30,7 +30,10 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
 @endsection
-@section('content')
+@section('nav-active-Forum')
+    active
+@endsection
+@section('head-content')
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 p-0" style="background-image: url(https://images.unsplash.com/photo-1533561052604-c3beb6d55b8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80);">
         <div class="container-fluid page-header-inner py-5">
@@ -41,6 +44,9 @@
         </div>
     </div>
     <!-- Page Header End -->
+@endsection
+@section('content')
+
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center">
             <a type="submit" class="btn btn-primary mt-3 mb-3" href="{{route('createPost')}}">Nouveau Post</a>

@@ -7,7 +7,6 @@
 
 <body>
 
-
 <!-- Topbar Start -->
 <div class="container-fluid bg-light p-0">
     <div class="row gx-0 d-none d-lg-flex">
@@ -48,27 +47,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index" class="nav-item nav-link">Home</a>
-            <a href="about" class="nav-item nav-link">About</a>
-            <a href="service" class="nav-item nav-link">Services</a>
+            <a href="/index" class="nav-item nav-link @yield('nav-active-Home')">Home</a>
+            <a href="/about" class="nav-item nav-link @yield('nav-active-About')">About</a>
+            <a href="/AllPost" class="nav-item nav-link @yield('nav-active-Forum')">Forum</a>
+            <a href="/evenement" class="nav-item nav-link @yield('nav-active-Events')">Events</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="booking" class="dropdown-item">Booking</a>
-                    <a href="team" class="dropdown-item">Technicians</a>
-                    <a href="testimonial" class="dropdown-item">Testimonial</a>
-                    <a href="404" class="dropdown-item">404 Page</a>
+                    <a href="/AllProduit" class="dropdown-item @yield('nav-active-Products')">Products</a>
+                    <a href="/AllPromotion" class="dropdown-item @yield('nav-active-Promotions')">Promotions</a>
+                    <a href="/reservation" class="dropdown-item @yield('nav-active-Reservation')">Reservation</a>
                 </div>
             </div>
-            <a href="contact" class="nav-item nav-link active">Contact</a>
+            <a href="contact" class="nav-item nav-link @yield('nav-active-Contact')">Contact</a>
         </div>
-        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+        <a href="/login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Start<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>
 <!-- Navbar End -->
-
+@yield('head-content')
 @yield('content')
-
 
 @yield('footer')
 <!-- Footer Start -->
@@ -116,10 +114,9 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
+                    &copy; <a class="border-bottom" href="#">Velo.tn</a>, All Right Reserved.
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    Designed By <a class="border-bottom">AeroDev</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">

@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VeloController;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\VeloFFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -135,7 +139,7 @@ Route::get('/deletePromotion/{id}',[\App\Http\Controllers\PromotionController::c
 
 
 Route::get('/createformProduit',[\App\Http\Controllers\ProduitController::class, 'createformProduit'])->name('createformProduit');
-Route::get('/search',[\App\Http\Controllers\ProduitController::class, 'searchProduit'])->name('searchProduit');
+Route::get('/searchProduct',[\App\Http\Controllers\ProduitController::class, 'searchProduit'])->name('searchProduit');
 Route::get('/searchback',[\App\Http\Controllers\ProduitController::class, 'searchProduitBack'])->name('searchProduitBack');
 
 
@@ -181,9 +185,12 @@ Route::get('/createEvenementBack',[\App\Http\Controllers\EvenementController::cl
 Route::get('/showformReservationBack/{id}',[\App\Http\Controllers\ReservationController::class,'editReservationBack'])->name('editReservationBack');
 Route::get('/deleteReservationBack/{id}',[\App\Http\Controllers\ReservationController::class,'deleteReservationBack'])->name('deleteReservationBack');
 
-
-
-
-
 /*End  Gestion evenement */
+
+
+/*start getionvelo*/
+Route::resource('/velo', VeloController::class);
+Route::resource('/location', LocationController::class);
+Route::resource('/veloFF', VeloFFController::class);
+/*end getionvelo*/
 

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('cin');
             $table->date('dateDebut');
             $table->date('dateFin');
+            $table->string('velo');
+
         });
     }
 

@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Location;
 
-class velo extends Model
+class Velo extends Model
 {
-    use HasFactory;
-    public function locationvelo()
-    {
-        return $this->belongsToMany(locationvelo::class);
-    }
+    protected $table = 'velos';
+    protected $primaryKey = 'id';
+    protected $fillable = ['type', 'nombres', 'couleurs', 'prix'];
+    public $timestamps = false;    
 }

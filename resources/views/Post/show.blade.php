@@ -34,6 +34,18 @@
 @section('title')
     Post
 @endsection
+@section('head-content')
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(https://images.unsplash.com/photo-1533561052604-c3beb6d55b8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80);">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Forum</h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+@endsection
 @section('content')
     <!-- Page Post2 start -->
     <div style="margin-left: 10px ;">
