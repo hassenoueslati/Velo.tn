@@ -18,12 +18,8 @@ return new class extends Migration
             $table->string('nomProduit');
             $table->string('descriptionProduit');
             $table->float('prixProduit');
-<<<<<<<< HEAD:database/migrations/2022_10_22_104307_create_produits_table.php
             $table->integer('quantity');
-/*            $table->foreignId('id_promotion')->unsigned()->nullable()->constrained('promotions')->cascadeOnDelete();*/
-========
-            $table->foreignId('id_promotion')->unsigned()->nullable()->constrained('promotions')->cascadeOnDelete();
->>>>>>>> main:database/migrations/2022_10_22_105838_create_produits_table.php
+            /*            $table->foreignId('id_promotion')->unsigned()->nullable()->constrained('promotions')->cascadeOnDelete();*/
             // $table->int('quantiteProduit');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

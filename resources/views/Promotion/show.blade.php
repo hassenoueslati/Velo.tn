@@ -152,7 +152,7 @@
                             </tr>
                             <tr>
                                 <td><label>Category:</label></td>
-                                <td><input type="text" name="category" id="category"  ></td>
+                                <td><input type="text" name="categoriePromotion" id="categoriePromotion"  ></td>
                             </tr>
                             <tr>
                                 <td><label>prixPromotion:</label></td>
@@ -160,7 +160,12 @@
                             </tr>
 
                             <tr>
-
+                                <td><label>Date Debut :</label></td>
+                                <td><input type="date" name="dateDebutPromo" id="dateDebutPromo"  ></td>
+                            </tr>
+                            <tr>
+                                <td><label>Date Fin :</label></td>
+                                <td><input type="date" name="dateFinPromo" id="dateFinPromo"  ></td>
                             </tr>
 
                             <td><label>Etat Promotion:</label></td>

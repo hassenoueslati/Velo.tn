@@ -52,7 +52,9 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
+
         <!--/ Borderless Table -->
     </div>
 

@@ -7,6 +7,11 @@
 
 </tr>
     <tr>
+<td><label>Nom du module:</label></td>
+<td><input type="number" name="quantity" id="quantity"></td>
+
+</tr>
+    <tr>
         <td><label>Category:</label></td>
         <td> <select name="category_id" class="form-control">
                 @foreach($categories as $category)

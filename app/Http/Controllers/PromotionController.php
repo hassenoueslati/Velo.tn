@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Promotion;
 use Illuminate\Http\Request;
 
@@ -12,25 +13,43 @@ class PromotionController extends Controller
         return view("Promotion.show",compact("listPromotion"));
     }
 
+    public function showAllPromotionBack(){
+        $listPromotion = Promotion::all();
+        $categories = Category::all();
+
+        return view("ShopingBack.Promotionback.index",compact("listPromotion","categories"));
+    }
+
     public function deletePromotion($id){
         $Promotion = Promotion::find($id);
         $Promotion->delete();
-        return redirect("");
+        return redirect("/promotion");
     }
+
+
 
     public function editPromotion($id){
         $Promotion = Promotion::find($id);
         return view("",compact("Promotion"));
     }
 
+    public function editPromotionBack($id){
+        $Promotion = Promotion::find($id);
+        return view("ShopingBack.promotionback.edit",compact("Promotion"));
+    }
+
     public function updatePromotion(Request $request,$id){
         $Promotion = Promotion::find($id);
-        $Promotion->nomPromotion = $request->get('nomPromotion');
-        $Promotion->categoriePromotion = $request->get('categoriePromotion');
-        $Promotion->dateDebutPromo = $request->get('dateDebutPromo');
-        $Promotion->dateFinPromo = $request->get('dateFinPromo');
-        $Promotion->update();
-        return redirect('');
+        $input=$request->all();
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $name=$file->getClientOriginalName();
+            $file->move(public_path().'/uploads/', $name);
+            $data['image'] = $name;
+        }
+        $Promotion->update($input);
+        return redirect('/promotion');
     }
 
     public function createformpromotion(){
@@ -48,6 +67,6 @@ class PromotionController extends Controller
             $data['image'] = $name;
         }
         $Promotion::create($input);
-        return redirect('');
+        return redirect('/promotion');
     }
 }

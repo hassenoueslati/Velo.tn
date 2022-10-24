@@ -214,7 +214,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h6 class="text-primary text-uppercase">{{$item['category']}}</h6>
+                <h6 class="text-primary text-uppercase">{{$item->Category->nomCategory}}</h6>
                 <h1 class="mb-4"><span class="text-primary">{{$item['prixProduit']}}</span> TND</h1>
                 <p class="mb-4">{{$item['descriptionProduit']}}</p>
                 <div class="row g-4 mb-3 pb-3">
@@ -329,7 +329,24 @@
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+<script>
+    @if(Session::has('alert-success'))
+    Toastify({ text: "{{ Session::get('alert-success') }}", duration: 3000,
+        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+    }).showToast();
 
+    @elseif (Session::has('alert-warning'))
+    Toastify({ text: "{{ Session::get('alert-warning') }}", duration: 3000,
+        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+    }).showToast();
+
+    @elseif (Session::has('alert-danger'))
+    Toastify({ text: "{{ Session::get('alert-danger') }}", duration: 3000,
+        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+    }).showToast();
+
+    @endif
+</script>
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

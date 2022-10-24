@@ -44,3 +44,4 @@
         <td clospan="2"><button type="submit" class="btn btn-secondary">Add</button></td></tr>
 
     </table></div></form>
+@endsection

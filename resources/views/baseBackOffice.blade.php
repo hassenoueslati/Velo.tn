@@ -20,7 +20,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/backOffice/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/backOffice/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,18 +30,18 @@
         rel="stylesheet"
     />
 
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/fonts/boxicons.css" />
+    <!-- ../. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="assets/backOffice/assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
@@ -146,6 +146,28 @@
                         <div data-i18n="Analytics">Forum</div>
                     </a>
                 </li>
+
+                <li class="menu-item @yield('Product') ">
+                    <a href="/product" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Product</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Promotion') ">
+                    <a href="/promotion" class="menu-link">
+                        <i class="menu-icon bx bx-laugh"></i>
+                        <div data-i18n="Analytics">Promotion</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Category') ">
+                    <a href="/category" class="menu-link">
+                        <i class="menu-icon bx bx-book"></i>
+                        <div data-i18n="Analytics">category</div>
+                    </a>
+                </li>
+
+
+
                 <!-- Menu2 -->
 
             </ul>

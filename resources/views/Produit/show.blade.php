@@ -157,6 +157,7 @@
         <th>descriptionProduit</th>
         <th>prixProduit</th>
         <th>etatProduit</th>
+        <th>Category</th>
         <th>Action</th>
     </tr>
 
@@ -166,6 +167,7 @@
             <td>{{$Produit->descriptionProduit}}</td>
             <td>{{$Produit->prixProduit}}</td>
             <td>{{$Produit->etatProduit}}</td>
+            <td>{{$Produit->Category->nomCategory}}</td>
             <td><a href="{{route('deleteProduit',$Produit->id)}}">Delete </a>
                 <a href="{{route('editProduit',$Produit->id)}}">Update</a> </td>
         </tr>
@@ -224,7 +226,7 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://codex.com/credit-removal". Thank you for your support. ***/-->
+                    <!--/*** This template is free as long as you keep the footer author’s creditplink/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://codex.com/credit-removal". Thank you for your support. ***/-->
                     Designed By <a class="border-bottom" href="https://codex.com"> Codex</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
