@@ -8,16 +8,27 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    public function showAllreservation(){
+    public function showAllReservation(){
         $listreservation=reservation::all();
 
         return view ("Reservation.show",compact("listreservation"));
     }
+    public function showAllReservationBack(){
+        $listreservation=reservation::all();
+
+        return view ("ReservationBack.index",compact("listreservation"));
+    }
+
 
     public function deleteReservation($id){
         $reservation=Reservation::find($id);
         $reservation->delete();
         return redirect("/reservation");
+    }
+    public function deleteReservationBack($id){
+        $reservation=Reservation::find($id);
+        $reservation->delete();
+        return redirect("/ReservationBack");
     }
 
     public function editReservation ($id){
@@ -49,13 +60,13 @@ class ReservationController extends Controller
 
         auth()->user()->reservations()->create($data);
 
-        /*$reservation = new Reservation();
+        $reservation = new Reservation();
         $reservation->dateDebut = $request->get('dateDebut');
         $reservation->dateFin = $request->get('dateFin');
         $reservation->user_id = auth()->user()->id;
         $reservation->evenement_id = $request->get('evenement_id');
         $reservation->description = $request->get('description');
-        $reservation->save();*/
+        $reservation->save();
         return redirect('/reservation');
 
     }

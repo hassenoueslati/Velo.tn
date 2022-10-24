@@ -20,7 +20,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/backOffice/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/backOffice/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,26 +31,26 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="assets/backOffice/assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="assets/backOffice/assets/vendor/js/helpers.js"></script>
+    <script src="../assets/backOffice/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="assets/backOffice/assets/js/config.js"></script>
+    <script src="../assets/backOffice/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -144,6 +144,18 @@
                     <a href="/forum" class="menu-link">
                         <i class="menu-icon bx bx-comment"></i>
                         <div data-i18n="Analytics">Forum</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Reservation') ">
+                    <a href="/ReservationBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Reservation</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Evenement') ">
+                    <a href="/EvenementBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Evenement</div>
                     </a>
                 </li>
                 <!-- Menu2 -->

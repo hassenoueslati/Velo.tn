@@ -12,6 +12,12 @@ class EvenementController extends Controller
         return view ("Evenement.show",compact("listevenement"));
     }
 
+    public function showAllEvenementBack(){
+        $listevenement= evenement::all();
+        return view ("EvenementBack.index",compact("listevenement"));
+    }
+
+
     public function deleteEvenement($id){
         $evenement=evenement::find($id);
         $evenement->delete();
@@ -50,9 +56,29 @@ class EvenementController extends Controller
         $evenement->nbPlaces = request('nbPlaces');
         $evenement->categorieEvenement = request('categorieEvenement');
         $evenement->save();
-        return redirect('/evenement');
+        return redirect('/EvenementBack');
 
     }
+
+    public function saveEvenementBack(Request $request){
+
+        request()->validate([
+            'nomEvenement' => 'required | min:5 ',
+            'dateEvenement' => 'required',
+            'nbPlaces' => 'required',
+            'categorieEvenement' => 'required | min:5'
+        ]);
+        $evenement = new Evenement();
+        $evenement->nomEvenement = request('nomEvenement');
+        $evenement->dateEvenement = request('dateEvenement');
+        $evenement->nbPlaces = request('nbPlaces');
+        $evenement->categorieEvenement = request('categorieEvenement');
+        $evenement->save();
+        return redirect('/EvenementBack');
+
+    }
+
+
     public function searchEvenement()
     {
         $search_text =$_GET['query'];

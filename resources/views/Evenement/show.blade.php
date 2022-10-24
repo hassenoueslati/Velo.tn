@@ -349,7 +349,7 @@
 <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-1.jpg);">
     <div class="container-fluid page-header-inner py-5">
         <div class="container text-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown"> Evénements</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown"> Events</h1>
             <nav aria-label="breadcrumb">
 
             </nav>
@@ -373,14 +373,15 @@
         <p><td>At {{$evenement->dateEvenement}}</td></p>
         <div class="testimonial-text bg-light text-center p-4" style="display: flex; justify-content: space-around">
             <div>
-                <h5 class="mb-0">Nombre De Place </h5><p class="mb-0">{{$evenement->nbPlaces}}</p>
+                <h5 class="mb-0"> Place Number </h5><p class="mb-0">{{$evenement->nbPlaces}}</p>
             </div>
                 <div>
-                 <h5 class="mb-0">Catégorie </h5> <p class="mb-0">{{$evenement->categorieEvenement}}</p>
+                 <h5 class="mb-0">Category </h5> <p class="mb-0">{{$evenement->categorieEvenement}}</p>
                 </div>
         </div>
     </div>
     @endforeach
+        <span style="display: none"></span>
 </div>
 {{--
 <Table>

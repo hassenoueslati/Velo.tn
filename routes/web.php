@@ -70,3 +70,40 @@ Route::get('/UpdateCommentaire/{id}',[\App\Http\Controllers\CommentaireControlle
 
 
 Route::get('/forum',[\App\Http\Controllers\PostController::class, 'showAllPostBack']);
+
+
+/*Start Gestion evenement */
+
+Route::get('/evenement',[\App\Http\Controllers\EvenementController::class,'showAllEvenement']);
+Route::get('/reservation',[\App\Http\Controllers\ReservationController::class,'showAllReservation']);
+Route::get('/EvenementBack',[\App\Http\Controllers\EvenementController::class,'showAllEvenementBack']);
+Route::get('/ReservationBack',[\App\Http\Controllers\ReservationController::class,'showAllReservationBack']);
+
+
+Route::get('/deleteEvenement/{id}',[\App\Http\Controllers\EvenementController::class,'deleteEvenement'])->name('deleteEvenement');
+Route::get('/showformEvenement/{id}',[\App\Http\Controllers\EvenementController::class,'editEvenement'])->name('editEvenement');
+Route::get('/updateEvenement/{id}',[\App\Http\Controllers\EvenementController::class,'updateEvenement'])->name('updateEvenement');
+Route::get('/showformCreateEvenement',[\App\Http\Controllers\EvenementController::class,'createEvenement'])->name('createEvenement');
+Route::get('/createEvenement',[\App\Http\Controllers\EvenementController::class,'saveEvenement'])->name('saveEvenement');
+Route::get('/search',[\App\Http\Controllers\EvenementController::class,'searchEvenement']);
+
+
+Route::get('/deleteReservation/{id}',[\App\Http\Controllers\ReservationController::class,'deleteReservation'])->name('deleteReservation');
+Route::get('/showformReservation/{id}',[\App\Http\Controllers\ReservationController::class,'editReservation'])->name('editReservation');
+Route::get('/updateReservation/{id}',[\App\Http\Controllers\ReservationController::class,'updateReservation'])->name('updateReservation');
+Route::get('/showformCreateReservation',[\App\Http\Controllers\ReservationController::class,'createReservation'])->name('createReservation');
+Route::get('/createReservation',[\App\Http\Controllers\ReservationController::class,'saveReservation'])->name('saveReservation');
+
+
+Route::get('/showformEvenementBack/{id}',[\App\Http\Controllers\EvenementController::class,'editEvenementBack'])->name('editEvenementBack');
+Route::get('/createEvenementBack',[\App\Http\Controllers\EvenementController::class,'saveEvenementBack'])->name('saveEvenementBack');
+
+
+Route::get('/showformReservationBack/{id}',[\App\Http\Controllers\ReservationController::class,'editReservationBack'])->name('editReservationBack');
+Route::get('/deleteReservationBack/{id}',[\App\Http\Controllers\ReservationController::class,'deleteReservationBack'])->name('deleteReservationBack');
+
+
+
+
+
+/*End  Gestion evenement */

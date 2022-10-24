@@ -124,7 +124,7 @@
     <div class="form-group">
         <table>
             <tr>
-                <td><label for="nomEvenement">Nom:</label></td>
+                <td><label for="nomEvenement">Name:</label></td>
                 <td><input type="text" name="nomEvenement" id="nomEvenement" class="form-control @error('nomEvenement')is-invalid @enderror" >
                     @error('nomEvenement')
                     <div class="invalid-feedback" >{{ $errors ->first('nomEvenement')}}</div>
@@ -140,7 +140,7 @@
                     @enderror</td>
             </tr>
             <tr>
-                <td><label>Nombre de palce:</label></td>
+                <td><label> Place Number:</label></td>
                 <td> <input  type="number" name="nbPlaces" id="nbPlaces" class="form-control @error('nbPlaces') is-invalid @enderror"  >
                     @error('nbPlaces')
                     <div class="invalid-feedback">{{ $errors ->first('nbPlaces')}}</div>
