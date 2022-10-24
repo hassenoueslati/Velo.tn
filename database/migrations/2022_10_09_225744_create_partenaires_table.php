@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('specialitePartenaire');
             $table->string('nomPartenaire');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->string('etat');
             $table->timestamps();
         });
