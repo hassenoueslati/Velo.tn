@@ -51,7 +51,9 @@
                                 </thead>
                                 <tbody>
                                 @foreach($velos as $item)
-                                    <tr>
+                                    
+                                
+                                <tr>
                                         
                                         <td>{{ $item->type }}</td>
                                         <td>{{ $item->nombres }}</td>
