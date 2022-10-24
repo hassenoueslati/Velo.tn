@@ -40,6 +40,14 @@ class PromotionController extends Controller
 
     public function updatePromotion(Request $request,$id){
         $Promotion = Promotion::find($id);
+        request()->validate([
+            'nomPromotion' => 'required|min:5',
+            'categoriePromotion' => 'required',
+            'descriptionPromotion' => 'required',
+            'dateDebutPromo' => 'required',
+            'image' => 'required',
+            'dateFinPromo' => 'required',
+        ]);
         $input=$request->all();
         if($request->hasFile('image'))
         {
