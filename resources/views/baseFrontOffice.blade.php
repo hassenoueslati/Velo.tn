@@ -55,13 +55,14 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                 <div class="dropdown-menu fade-up m-0">
                     <a href="/AllProduit" class="dropdown-item @yield('nav-active-Products')">Products</a>
+                    <a href="/veloFF" class="dropdown-item @yield('nav-active-Velo')">Velo</a>
                     <a href="/AllPromotion" class="dropdown-item @yield('nav-active-Promotions')">Promotions</a>
                     <a href="/reservation" class="dropdown-item @yield('nav-active-Reservation')">Reservation</a>
                 </div>
             </div>
-            <a href="contact" class="nav-item nav-link @yield('nav-active-Contact')">Contact</a>
+            <a href="/contact" class="nav-item nav-link @yield('nav-active-Contact')">Contact</a>
         </div>
-        <a href="/login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Start<i class="fa fa-arrow-right ms-3"></i></a>
+        <a href="/login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>
 <!-- Navbar End -->
@@ -76,8 +77,8 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Address</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Esprit, 26 Rue de l'Usine, 2 2035</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+216 23 658 XXX0</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+216 22 615 738</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>aero1velo@gmail.com</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
