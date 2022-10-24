@@ -169,7 +169,7 @@ Route::get('/updateEvenement/{id}',[\App\Http\Controllers\EvenementController::c
 Route::get('/showformCreateEvenement',[\App\Http\Controllers\EvenementController::class,'createEvenement'])->name('createEvenement');
 Route::get('/createEvenement',[\App\Http\Controllers\EvenementController::class,'saveEvenement'])->name('saveEvenement');
 Route::get('/search',[\App\Http\Controllers\EvenementController::class,'searchEvenement']);
-
+Route::get('/updateEvenementBack/{id}',[\App\Http\Controllers\EvenementController::class,'updateEvenementBack'])->name('updateEvenementBack');
 
 Route::get('/deleteReservation/{id}',[\App\Http\Controllers\ReservationController::class,'deleteReservation'])->name('deleteReservation');
 Route::get('/showformReservation/{id}',[\App\Http\Controllers\ReservationController::class,'editReservation'])->name('editReservation');

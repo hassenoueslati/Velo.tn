@@ -39,6 +39,16 @@ class EvenementController extends Controller
         return redirect('/evenement');
     }
 
+    public function updateEvenementBack(Request $request,$id){
+        $evenement=Evenement::find($id);
+        $evenement->nomEvenement = $request->get('nomEvenement');
+        $evenement->dateEvenement = $request->get('dateEvenement');
+        $evenement->nbPlaces = $request->get('nbPlaces');
+        $evenement->categorieEvenement = $request->get('categorieEvenement');
+        $evenement->update();
+        return redirect('/EvenementBack');
+    }
+
     public function createEvenement(){
         return view('evenement.create');
     }
