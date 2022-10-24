@@ -191,7 +191,23 @@
                         <div data-i18n="Analytics">Partenaires</div>
                     </a>
                 </li>
+
+                <!-- Velo -->
+                <li class="menu-item @yield('Velo') ">
+                    <a href="/velo" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Velo</div>
+                    </a>
+                </li>
+                <!-- Location -->
+                <li class="menu-item @yield('Location') ">
+                    <a href="/location" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Location Velo</div>
+                    </a>
+                </li>
                 <!-- Menu2 -->
+
 
             </ul>
         </aside>

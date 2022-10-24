@@ -181,9 +181,12 @@ Route::get('/createEvenementBack',[\App\Http\Controllers\EvenementController::cl
 Route::get('/showformReservationBack/{id}',[\App\Http\Controllers\ReservationController::class,'editReservationBack'])->name('editReservationBack');
 Route::get('/deleteReservationBack/{id}',[\App\Http\Controllers\ReservationController::class,'deleteReservationBack'])->name('deleteReservationBack');
 
-
-
-
-
 /*End  Gestion evenement */
+
+
+/*start getionvelo*/
+Route::resource('/velo', VeloController::class);
+Route::resource('/location', LocationController::class);
+Route::resource('/veloFF', VeloFFController::class);
+/*end getionvelo*/
 
