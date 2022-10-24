@@ -39,11 +39,6 @@ class PartenaireController extends Controller
 
     public function updatePartenaire(Request $request,$id){
         $partenaire = Partenaire::find($id);
-        request()->validate([
-            'specialitePartenaire' => 'required|min:5',
-            'nomPartenaire' => 'required',
-            'etat' => 'required|min:5',
-        ]);
         $partenaire->specialitePartenaire = $request->get('specialitePartenaire');
         $partenaire->nomPartenaire = $request->get('nomPartenaire');
         $partenaire->etat = $request->get('etat');
@@ -59,18 +54,11 @@ class PartenaireController extends Controller
         request()->validate([
             'specialitePartenaire' => 'required|min:5',
             'nomPartenaire' => 'required',
-            'etat' => 'required|min:5',
+            'etat' => 'required',
         ]);
         $partenaire = new Partenaire();
         $partenaire->specialitePartenaire = $request->get('specialitePartenaire');
         $partenaire->nomPartenaire = $request->get('nomPartenaire');
-        if($request->hasFile('logo'))
-        {
-            $file = $request->file('logo');
-            $name=$file->getClientOriginalName();
-            $file->move(public_path().'/uploads/', $name);
-            $data['logo'] = $name;
-        }
         $partenaire->etat = $request->get('etat');
         $partenaire->save();
         return redirect('/partenaire');
