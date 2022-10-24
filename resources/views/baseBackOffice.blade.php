@@ -20,7 +20,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/backOffice/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/backOffice/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,26 +31,26 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="assets/backOffice/assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="assets/backOffice/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="../assets/backOffice/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="assets/backOffice/assets/vendor/js/helpers.js"></script>
+    <script src="../assets/backOffice/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="assets/backOffice/assets/js/config.js"></script>
+    <script src="../assets/backOffice/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -61,7 +61,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-                <a href="index.html" class="app-brand-link">
+                <a href="/home" class="app-brand-link">
               <span class="app-brand-logo demo">
                   <!---- log ---->
                 <svg
@@ -146,6 +146,37 @@
                         <div data-i18n="Analytics">Forum</div>
                     </a>
                 </li>
+
+                <li class="menu-item @yield('Product') ">
+                    <a href="/product" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Product</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Promotion') ">
+                    <a href="/promotion" class="menu-link">
+                        <i class="menu-icon bx bx-laugh"></i>
+                        <div data-i18n="Analytics">Promotion</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Category') ">
+                    <a href="/category" class="menu-link">
+                        <i class="menu-icon bx bx-book"></i>
+                        <div data-i18n="Analytics">category</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Reservation') ">
+                    <a href="/ReservationBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Reservation</div>
+                    </a>
+                </li>
+                <li class="menu-item @yield('Evenement') ">
+                    <a href="/EvenementBack" class="menu-link">
+                        <i class="menu-icon bx bx-comment"></i>
+                        <div data-i18n="Analytics">Evenement</div>
+                    </a>
+                </li>
                 <!-- Ateliers -->
                 <li class="menu-item @yield('Ateliers') ">
                     <a href="/atelier" class="menu-link">
@@ -154,7 +185,7 @@
                     </a>
                 </li>
                 <!-- Partenaires -->
-                <li class="menu-item @yield('Ateliers') ">
+                <li class="menu-item @yield('Partenaires') ">
                     <a href="/partenaire" class="menu-link">
                         <i class="menu-icon bx bx-comment"></i>
                         <div data-i18n="Analytics">Partenaires</div>
@@ -213,7 +244,7 @@
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    <img src="../assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -222,7 +253,7 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                    <img src="../assets/backOffice/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
@@ -283,7 +314,34 @@
                 <!-- / Content -->
                 <!-- Footer -->
                 <footer class="content-footer footer bg-footer-theme">
+                    <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                        <div class="mb-2 mb-md-0">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            , made with ❤️ by
+                            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                        </div>
+                        <div>
+                            <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                            <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
 
+                            <a
+                                href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                                target="_blank"
+                                class="footer-link me-4"
+                            >Documentation</a
+                            >
+
+                            <a
+                                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                                target="_blank"
+                                class="footer-link me-4"
+                            >Support</a
+                            >
+                        </div>
+                    </div>
                 </footer>
                 <!-- / Footer -->
 
