@@ -1,4 +1,4 @@
-@extends("baseFrontOffice")
+ @extends("baseFrontOffice")
 @section('head')
     <meta charset="utf-8">
     <title>Vélo.tn </title>
@@ -30,6 +30,21 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
 @endsection
+ @section('nav-active-Velo')
+     active
+ @endsection
+ @section('head-content')
+     <!-- Page Header Start -->
+     <div class="container-fluid page-header mb-5 p-0" style="background-image: url(https://images.unsplash.com/photo-1533561052604-c3beb6d55b8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80);">
+         <div class="container-fluid page-header-inner py-5">
+             <div class="container text-center">
+                 <h1 class="display-3 text-white mb-3 animated slideInDown">Velo</h1>
+
+             </div>
+         </div>
+     </div>
+     <!-- Page Header End -->
+ @endsection
 @section('content')
     <div class="container">
         <div class="row">
@@ -37,12 +52,12 @@
                 <div class="card">
                     <div class="card-header">velos</div>
                     <div class="card-body">
-                       
+
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        
+
                                         <th>Type</th>
                                         <th>Nombres</th>
                                         <th>Couleurs</th>
@@ -51,16 +66,16 @@
                                 </thead>
                                 <tbody>
                                 @foreach($velos as $item)
-                                    
-                                
+
+
                                 <tr>
-                                        
+
                                         <td>{{ $item->type }}</td>
                                         <td>{{ $item->nombres }}</td>
                                         <td>{{ $item->couleurs }}</td>
                                         <td>{{ $item->prix }}</td>
                                         <td>
-                                            
+
                                             <form method="POST" action="{{ url('/veloFF' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
